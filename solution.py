@@ -4,14 +4,14 @@ def cryptographer(oText, key):
     sectionsOrd = []
     seenLetter = None
 
-    #Preparación de la cadena:
+    #String format:
     oText = oText.strip().replace(" ","")
 
-    #Añadido de caracteres extras al final:
+    #Extra final characters:
     auxC = (len(oText)/len(key))
     oText += oText[-1]*int(float("%.1f" %((ceil(auxC)-auxC)*len(key))))
 
-    #Proceso:
+    #Process:
     sectionsV = [oText[i::len(key)] for i in range(len(key))]
    
     for letter in sorted(key):
